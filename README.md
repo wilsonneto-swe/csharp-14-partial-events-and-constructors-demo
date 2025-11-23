@@ -5,11 +5,13 @@ Before C# 14 we weren't able to define partial constructors or events, this is a
 ```csharp
 public partial class User
 {
-    public string Name { get; private set; }
-
+    // now we can define partial constructors
     public partial User(string name);
 
+    // also partial events
     public partial event Action<string> NameChanged;
+
+    public string Name { get; private set; }
 
     public partial void Rename(string newName);
 }
